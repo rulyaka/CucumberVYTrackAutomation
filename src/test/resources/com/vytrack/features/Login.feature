@@ -1,3 +1,4 @@
+@login @vyt-111
 Feature: Login
   Agile story:
   As a user,
@@ -21,3 +22,4 @@ Feature: Login
     Given I am on the login page
     When I login as a sales manager
     Then I should be able to see the dashboard page
+

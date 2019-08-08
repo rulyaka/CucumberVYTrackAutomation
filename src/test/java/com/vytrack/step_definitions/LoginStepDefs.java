@@ -1,6 +1,9 @@
 package com.vytrack.step_definitions;
 
+<<<<<<< HEAD
 import com.google.gson.internal.bind.util.ISO8601Utils;
+=======
+>>>>>>> origin/master
 import com.vytrack.pages.LoginPage;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.ConfigurationReader;
@@ -14,9 +17,14 @@ public class LoginStepDefs {
 
     @Given("I am on the login page")
     public void i_am_on_the_login_page() {
+
         System.out.println("Opening the login page");
+<<<<<<< HEAD
         Driver.get().get(ConfigurationReader.get("url"));  // << opens browser and goes to website
 
+=======
+        Driver.get().get(ConfigurationReader.get("url"));
+>>>>>>> origin/master
     }
 
     @Then("I should be able to see the dashboard page")
@@ -24,11 +32,16 @@ public class LoginStepDefs {
         System.out.println("Verifying dashboard page");
         BrowserUtils.waitFor(2);
         Assert.assertTrue(Driver.get().getTitle().contains("Dashboard"));
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/master
     }
 
     @When("I login as a sales manager")
     public void i_login_as_a_sales_manager() {
         System.out.println("Logging in as a sales manager");
+<<<<<<< HEAD
 
     }
 
@@ -40,6 +53,32 @@ public class LoginStepDefs {
 
         LoginPage loginPage = new LoginPage();
         loginPage.login(username, password);
+=======
+        String username = ConfigurationReader.get("salesmanager_username");
+        String password = ConfigurationReader.get("salesmanager_password");
+
+        LoginPage loginPage = new LoginPage();
+        loginPage.login(username, password);
+    }
+
+    @When("I login as a driver")
+    public void i_login_as_a_driver() {
+        System.out.println("Logging in as a driver");
+        String username = ConfigurationReader.get("driver_username");
+        String password = ConfigurationReader.get("driver_password");
+
+        LoginPage loginPage = new LoginPage();
+        loginPage.login(username, password);
+
+    }
+
+    @When("I login as a store manager")
+    public void i_login_as_a_store_manager() {
+        System.out.println("Logging in as a store manager");
+        LoginPage loginPage = new LoginPage();
+        loginPage.login("storemanager87", "UserUser123");
+    }
+>>>>>>> origin/master
 
     }
 
