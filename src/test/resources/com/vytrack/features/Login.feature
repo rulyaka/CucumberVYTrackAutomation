@@ -17,9 +17,10 @@ Feature: Login
     When I login as a sales manager
     Then I should be able to see the dashboard page
 
-  @store
+  @store @database
   Scenario: Login as a store manager
     Given I am on the login page
-    When I login as a sales manager
+    When I login as a store manager
     Then I should be able to see the dashboard page
+
 

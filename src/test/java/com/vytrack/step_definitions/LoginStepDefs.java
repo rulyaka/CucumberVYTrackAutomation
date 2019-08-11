@@ -1,4 +1,5 @@
 package com.vytrack.step_definitions;
+
 import com.vytrack.pages.LoginPage;
 import com.vytrack.utilities.BrowserUtils;
 import com.vytrack.utilities.ConfigurationReader;
@@ -22,13 +23,18 @@ public class LoginStepDefs {
         System.out.println("Verifying dashboard page");
         BrowserUtils.waitFor(2);
         Assert.assertTrue(Driver.get().getTitle().contains("Dashboard"));
+
     }
 
     @When("I login as a sales manager")
     public void i_login_as_a_sales_manager() {
         System.out.println("Logging in as a sales manager");
-    }
+        String username = ConfigurationReader.get("salesmanager_username");
+        String password = ConfigurationReader.get("salesmanager_password");
 
+        LoginPage loginPage = new LoginPage();
+        loginPage.login(username, password);
+    }
 
     @When("I login as a driver")
     public void i_login_as_a_driver() {
@@ -41,11 +47,12 @@ public class LoginStepDefs {
 
     }
 
-
     @When("I login as a store manager")
     public void i_login_as_a_store_manager() {
         System.out.println("Logging in as a store manager");
-        String username = ConfigurationReader.get("storemanager51");
-        String password = ConfigurationReader.get("storemanager");
+        LoginPage loginPage = new LoginPage();
+        loginPage.login("storemanager87", "UserUser123");
     }
+
+
 }
