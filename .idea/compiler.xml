@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="va-spring-2019-vytrack-cucumber" />
         <module name="vaspring2019vytrackcucumber" />
       </profile>
     </annotationProcessing>
